@@ -1,0 +1,197 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3iwp3hb0wkip"]
+
+[ext_resource type="PackedScene" uid="uid://dnm32523hwebl" path="res://Models/manshion.glb" id="1_bsan8"]
+[ext_resource type="PackedScene" uid="uid://dptf25jxxmfx1" path="res://Scenes/Player/TankPlayer.tscn" id="1_wwvlb"]
+[ext_resource type="PackedScene" uid="uid://bdxlqvu1g84sr" path="res://Scenes/World/Camera_(PlaceHolderLocation).tscn" id="2_cehwt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xm2fv"]
+sky_top_color = Color(6.9188e-08, 0.0703314, 0.0978905, 1)
+sky_horizon_color = Color(0.519526, 0.533025, 0.535171, 1)
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0.0781027, 0.0617697, 0.0427947, 1)
+ground_horizon_color = Color(0.519526, 0.533025, 0.535171, 1)
+
+[sub_resource type="Sky" id="Sky_lajf6"]
+sky_material = SubResource("ProceduralSkyMaterial_xm2fv")
+
+[sub_resource type="Environment" id="Environment_ghpt4"]
+background_mode = 2
+sky = SubResource("Sky_lajf6")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Test Area" type="Node3D"]
+
+[node name="TankPlayer" parent="." instance=ExtResource("1_wwvlb")]
+
+[node name="Cameras" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.974)
+
+[node name="Camera_(Place_Holder_Location)" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3)
+LookAt = NodePath("../../TankPlayer")
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)" index="0"]
+transform = Transform3D(3.54401, 0, 0, 0, 1, 0, 0, 0, 2.26128, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6369, 3.81283, 9.65452)
+
+[node name="Camera_(Place_Holder_Location)2" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 18)
+LookAt = NodePath("../../TankPlayer")
+CameraIsStatic = true
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)2" index="0"]
+transform = Transform3D(0.918, 0, 0, 0, 20, 0, 0, 0, 1.23, -1.08642, 9.28942, 0)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)2" index="1"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -7.83864, 9.42419, -3.82978)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)9" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94473, 10, 41.9134)
+LookAt = NodePath("../../TankPlayer")
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)9" index="0"]
+transform = Transform3D(4.79403, 0, 0, 0, 20, 0, 0, 0, 2.46736, -1.08642, 9.28942, 0)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)9/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)9" index="1"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -21.4837, 18.0747, -11.2065)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)10" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6581, 20.7328, 33.0529)
+LookAt = NodePath("../../TankPlayer")
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)10" index="0"]
+transform = Transform3D(1, 0, 0, 0, 12.4286, 0, 0, 0, 1.83242, 0, 0, 3.93747)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)10/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)10" index="1"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -2.6194, 5.43181, -6.94733)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)3" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 0, 2.7535)
+LookAt = NodePath("../../TankPlayer")
+CameraIsStatic = true
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)3" index="0"]
+transform = Transform3D(0.918, 0, 0, 0, 1, 0, 0, 0, 3.87249, 0, 0, 1.23843)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)3/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)3" index="1"]
+transform = Transform3D(0.959777, -0.0976091, 0.26325, 0.0608292, 0.987644, 0.144427, -0.274095, -0.122605, 0.953855, 2.86483, 3.84616, 16.6902)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)8" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 15.4026, 2.7535)
+LookAt = NodePath("../../TankPlayer")
+CameraIsStatic = true
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)8" index="0"]
+transform = Transform3D(0.918, 0, 0, 0, 1, 0, 0, 0, 3.87249, 0, 0, 1.23843)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)8/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)8" index="1"]
+transform = Transform3D(0.959777, -0.0976091, 0.26325, 0.0608292, 0.987644, 0.144427, -0.274095, -0.122605, 0.953855, 2.86483, 3.84616, 27.829)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)4" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.9866, 0, 6.54355)
+LookAt = NodePath("../../TankPlayer")
+CameraIsStatic = true
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)4" index="0"]
+transform = Transform3D(0.918, 0, 0, 0, 1, 0, 0, 0, 1.81155, 1.90735e-06, 0, 13.2376)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)4/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)4" index="1"]
+transform = Transform3D(0.535171, -0.313157, 0.784554, -0.0088693, 0.926614, 0.37591, -0.844697, -0.208135, 0.493119, 5.20266, 8.59432, 20.8961)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)5" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.9866, 0, 29.0343)
+LookAt = NodePath("../../TankPlayer")
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)5" index="0"]
+transform = Transform3D(0.918, 0, 0, 0, 1, 0, 0, 0, 1.81155, 1.90735e-06, 0, 13.2376)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)5/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)5" index="1"]
+transform = Transform3D(-0.680995, -0.0647239, 0.729422, 0.0608292, 0.987644, 0.144427, -0.729757, 0.142724, -0.668643, -0.362162, 3.84616, 4.90823)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)6" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.9866, 16.8392, 3.85271)
+LookAt = NodePath("../../TankPlayer")
+CameraIsStatic = true
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)6" index="0"]
+transform = Transform3D(0.918, 0, 0, 0, 1, 0, 0, 0, 1.81155, 1.90735e-06, 0, 13.2376)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)6/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)6" index="1"]
+transform = Transform3D(0.535171, -0.313157, 0.784554, -0.0088693, 0.926614, 0.37591, -0.844697, -0.208135, 0.493119, 5.20266, 8.59432, 20.8961)
+fov = 105.777
+
+[node name="Camera_(Place_Holder_Location)7" parent="Cameras" node_paths=PackedStringArray("LookAt") instance=ExtResource("2_cehwt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 18.9866, 16.8392, 26.3435)
+LookAt = NodePath("../../TankPlayer")
+
+[node name="Area3D" parent="Cameras/Camera_(Place_Holder_Location)7" index="0"]
+transform = Transform3D(0.918, 0, 0, 0, 1, 0, 0, 0, 1.81155, 1.90735e-06, 0, 13.2376)
+
+[node name="CollisionShape3D" parent="Cameras/Camera_(Place_Holder_Location)7/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="Camera" parent="Cameras/Camera_(Place_Holder_Location)7" index="1"]
+transform = Transform3D(-0.680995, -0.0647239, 0.729422, 0.0608292, 0.987644, 0.144427, -0.729757, 0.142724, -0.668643, -0.362162, 3.84616, 4.90823)
+fov = 105.777
+
+[node name="env" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="manshion" parent="env" instance=ExtResource("1_bsan8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_ghpt4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.858065, -0.44474, 0.25677, 0, 0.5, 0.866025, -0.513541, 0.743106, -0.429032, 0, 0, 0)
+light_color = Color(0.290196, 0.380392, 0.380392, 1)
+shadow_enabled = true
+
+[editable path="Cameras/Camera_(Place_Holder_Location)"]
+[editable path="Cameras/Camera_(Place_Holder_Location)2"]
+[editable path="Cameras/Camera_(Place_Holder_Location)9"]
+[editable path="Cameras/Camera_(Place_Holder_Location)10"]
+[editable path="Cameras/Camera_(Place_Holder_Location)3"]
+[editable path="Cameras/Camera_(Place_Holder_Location)8"]
+[editable path="Cameras/Camera_(Place_Holder_Location)4"]
+[editable path="Cameras/Camera_(Place_Holder_Location)5"]
+[editable path="Cameras/Camera_(Place_Holder_Location)6"]
+[editable path="Cameras/Camera_(Place_Holder_Location)7"]

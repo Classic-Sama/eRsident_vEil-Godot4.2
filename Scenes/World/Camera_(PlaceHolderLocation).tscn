@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdxlqvu1g84sr"]
+
+[ext_resource type="Script" path="res://Scenes/World/Camera_(Place_Holder_Location).gd" id="1_m842i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgjbv"]
+size = Vector3(8.75146, 1, 12)
+
+[node name="Camera_(Place_Holder_Location)" type="Node3D"]
+script = ExtResource("1_m842i")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_bgjbv")
+
+[node name="Camera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 4)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
